@@ -1,4 +1,4 @@
-import api from './api';
+import api from "./api";
 
 // Description: Get about section data
 // Endpoint: GET /api/portfolio/about
@@ -10,9 +10,9 @@ export const getAboutData = () => {
     setTimeout(() => {
       resolve({
         description: [
-          "Hello! I'm John, a software engineer based in San Francisco who enjoys building things that live on the internet. I develop exceptional websites and web apps that provide intuitive, pixel-perfect user interfaces with efficient and modern backends.",
-          "Shortly after graduating from UC Berkeley in 2018, I joined the engineering team at Airbnb where I work on a wide variety of interesting and meaningful projects on a daily basis.",
-          "Here are a few technologies I've been working with recently:"
+          "Hello! I'm Steve, a software engineer based in Douala who enjoys building things that live on the internet. I develop exceptional websites and web apps that provide intuitive, pixel-perfect user interfaces with efficient and modern backends.",
+          "I work on a wide variety of interesting and meaningful projects on a daily basis.",
+          "Here are a few technologies I've been working with recently:",
         ],
         skills: [
           "JavaScript (ES6+)",
@@ -20,15 +20,15 @@ export const getAboutData = () => {
           "React",
           "Node.js",
           "Python",
-          "PostgreSQL",
+          "SQL",
           "MongoDB",
-          "AWS",
-          "Docker",
-          "GraphQL",
+          "Tailwind",
+          "Angular",
+          "Laravel",
           "Next.js",
-          "Express.js"
+          "Express.js",
         ],
-        profileImage: "/profile.jpg"
+        profileImage: "/profile.jpg",
       });
     }, 500);
   });
@@ -38,7 +38,7 @@ export const getAboutData = () => {
   // } catch (error) {
   //   throw new Error(error?.response?.data?.error || error.message);
   // }
-}
+};
 
 // Description: Get experience data
 // Endpoint: GET /api/portfolio/experience
@@ -61,10 +61,17 @@ export const getExperienceData = () => {
             description: [
               "Write modern, performant, maintainable code for a diverse array of client and internal projects",
               "Work with a variety of different languages, platforms, frameworks, and content management systems such as JavaScript, TypeScript, Gatsby, React, Craft, WordPress, Prismic, and Netlify",
-              "Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis"
+              "Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis",
             ],
-            technologies: ["JavaScript", "React", "Node.js", "GraphQL", "PostgreSQL", "AWS"],
-            website: "https://airbnb.com"
+            technologies: [
+              "JavaScript",
+              "React",
+              "Node.js",
+              "GraphQL",
+              "PostgreSQL",
+              "AWS",
+            ],
+            website: "https://airbnb.com",
           },
           {
             _id: "2",
@@ -77,10 +84,17 @@ export const getExperienceData = () => {
             description: [
               "Developed and maintained code for in-house and client websites primarily using HTML, CSS, Sass, JavaScript, and jQuery",
               "Manually tested sites in various browsers and mobile devices to ensure cross-browser compatibility and responsiveness",
-              "Clients included JetBlue, Lovesac, U.S. Cellular, U.S. Department of Defense, and more"
+              "Clients included JetBlue, Lovesac, U.S. Cellular, U.S. Department of Defense, and more",
             ],
-            technologies: ["JavaScript", "jQuery", "HTML", "CSS", "Sass", "WordPress"],
-            website: "https://upstatement.com"
+            technologies: [
+              "JavaScript",
+              "jQuery",
+              "HTML",
+              "CSS",
+              "Sass",
+              "WordPress",
+            ],
+            website: "https://upstatement.com",
           },
           {
             _id: "3",
@@ -93,12 +107,12 @@ export const getExperienceData = () => {
             description: [
               "Developed a full-stack web application using React and Node.js to track and visualize UX research",
               "Worked with designers, engineers, and the research team to iterate on the UX research tools",
-              "Communicated with multi-disciplinary teams of engineers, designers, and researchers on a daily basis"
+              "Communicated with multi-disciplinary teams of engineers, designers, and researchers on a daily basis",
             ],
             technologies: ["React", "Node.js", "Express", "MongoDB", "D3.js"],
-            website: "https://apple.com"
-          }
-        ]
+            website: "https://apple.com",
+          },
+        ],
       });
     }, 500);
   });
@@ -108,7 +122,7 @@ export const getExperienceData = () => {
   // } catch (error) {
   //   throw new Error(error?.response?.data?.error || error.message);
   // }
-}
+};
 
 // Description: Get projects data
 // Endpoint: GET /api/portfolio/projects
@@ -121,72 +135,92 @@ export const getProjectsData = () => {
       resolve({
         projects: [
           {
-            _id: "1",
-            title: "Spotify Profile",
-            description: "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
-            technologies: ["React", "Styled Components", "Express", "Spotify API", "Heroku"],
+            id: 1,
+            title: "Project Task Management platform",
+            description:
+              "Productivity-focused task management web app where users can create, organize, and track tasks across multiple projects. It includes features like deadlines, priorities, categories, task status (to-do, in progress, done), and collaborative user assignment.",
+            descriptionvf:
+              "Application web de gestion de tâches orientée productivité, permettant aux utilisateurs de créer, organiser et suivre des tâches réparties sur plusieurs projets. Elle propose des fonctionnalités comme la gestion des échéances, des priorités, des catégories, des statuts de tâches (à faire, en cours, terminé) et l’attribution de tâches à plusieurs utilisateurs.",
+            image:
+              "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=800&h=400&fit=crop",
+            technologies: [
+              "Reactjs",
+              "Material UI",
+              "Tailwind",
+              "Express",
+              "MongoDB",
+              "Node"
+            ],
+            liveUrl: "https://taskify-steveceto.vercel.app/",
+            githubUrl: "https://github.com/stevecet/taskify",
+            featured: true,
             category: "Web App",
-            image: "/project1.jpg",
-            liveUrl: "https://spotify-profile.herokuapp.com/",
-            githubUrl: "https://github.com/johndoe/spotify-profile",
-            featured: true
           },
           {
-            _id: "2",
-            title: "Halcyon Theme",
-            description: "A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.",
-            technologies: ["VS Code", "Sublime Text", "Atom", "iTerm2", "Hyper"],
-            category: "Theme",
-            image: "/project2.jpg",
-            liveUrl: "https://halcyon-theme.netlify.com/",
-            githubUrl: "https://github.com/johndoe/halcyon-theme",
-            featured: true
-          },
-          {
-            _id: "3",
-            title: "Build a Spotify Connected App",
-            description: "Having struggled with understanding how the Spotify Web API works, I decided to create a comprehensive tutorial for fellow developers looking to integrate Spotify's Web API into their applications.",
-            technologies: ["React", "Express", "Spotify API", "Heroku"],
-            category: "Tutorial",
-            image: "/project3.jpg",
-            liveUrl: "https://medium.com/@johndoe/build-a-spotify-connected-app",
-            githubUrl: "https://github.com/johndoe/spotify-tutorial",
-            featured: false
-          },
-          {
-            _id: "4",
-            title: "OctoProfile",
-            description: "A nicer look at your GitHub profile and repo stats. Includes data visualizations of your top languages, starred repositories, and sort through your top repos by number of stars, forks, and size.",
-            technologies: ["Next.js", "Chart.js", "GitHub API", "Vercel"],
+            id: 2,
+            title: "Event Management System",
+            description:
+              "Platform for organizing and discovering events. Users can browse upcoming events by category or location, RSVP, and receive reminders. Admins can create events with descriptions, locations (map-based), and manage attendees.",
+            descriptionvf:
+              "Application de gestion et de découverte d'événements. Les utilisateurs peuvent parcourir les événements par catégorie ou par lieu, s’inscrire et recevoir des rappels. Les organisateurs peuvent créer des événements avec des descriptions, des dates, une carte de localisation et gérer les participants.",
+            image:
+              "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=800&h=400&fit=crop",
+            technologies: [
+              "Next",
+              "Shadcn",
+              "Tailwind",
+              "lucide-react",
+              "Flask",
+              "PostgreSQL",
+            ],
+            liveUrl: "https://eventory-steveceto.vercel.app/",
+            githubUrl: "https://github.com/stevecet/eventory",
+            featured: true,
             category: "Web App",
-            image: "/project4.jpg",
-            liveUrl: "https://octoprofile.vercel.app/",
-            githubUrl: "https://github.com/johndoe/octoprofile",
-            featured: true
           },
           {
-            _id: "5",
-            title: "Google Keep Clone",
-            description: "A simple Google Keep clone built with React and Firebase. Features include creating, editing, deleting, and searching notes with real-time synchronization.",
-            technologies: ["React", "Firebase", "Material-UI", "Context API"],
+            id: 3,
+            title: "Forum / Discussion Board",
+            description:
+              "Modern discussion forum where users can create threads, reply to posts, and engage in structured debates. Includes moderation tools, role-based permissions (admin/mod/user), and nested commenting with markdown support.",
+            descriptionvf:
+              "Plateforme de forum de discussion moderne où les utilisateurs peuvent créer des sujets, répondre à des messages, et participer à des débats structurés. Le système inclut des outils de modération, une gestion des rôles (admin/modérateur/utilisateur), et des commentaires imbriqués avec support Markdown.",
+            image: "https://unsplash.com/photos/people-talking-QBpZGqEMsKg",
+            technologies: [
+              "Next",
+              "Material UI",
+              "Tailwind",
+              "JWT",
+              "Express",
+              "MongoDB",
+            ],
+            liveUrl: "https://talk-am.vercel.app/",
+            githubUrl: "https://github.com/stevecet/talk-am",
+            featured: false,
             category: "Web App",
-            image: "/project5.jpg",
-            liveUrl: "https://keep-clone-react.netlify.com/",
-            githubUrl: "https://github.com/johndoe/google-keep-clone",
-            featured: false
           },
           {
-            _id: "6",
-            title: "Forkify Recipe App",
-            description: "A recipe application with custom recipe uploads and bookmarking functionality. Built with vanilla JavaScript and modern ES6+ features, bundled with Parcel.",
-            technologies: ["JavaScript", "HTML5", "CSS3", "Parcel", "MVC Architecture"],
+            id: 4,
+            title: "Booking System",
+            name: "Bookify",
+            description:
+              "An appointment booking platform for services such as salons, consulting, or classes. Users can view availability, reserve slots, receive reminders, and manage bookings. Admins configure time slots and services.",
+            descriptionvf:
+              "Plateforme de réservation de rendez-vous adaptée aux services comme les salons de beauté, les consultations ou les cours. Les utilisateurs peuvent consulter les disponibilités, réserver des créneaux, recevoir des rappels et gérer leurs réservations. Les administrateurs peuvent configurer les horaires et les types de services.",
+            image:
+              "https://unsplash.com/photos/white-printer-paper-on-brown-wooden-table-DItYlc26zVI",
+            technologies: [
+              "Next",
+              "MongoDB",
+              "Express",
+              "Node"
+            ],
+            liveUrl: "https://reservo-steveceto.vercel.app",
+            githubUrl: "https://github.com/stevecet/reservo",
+            featured: false,
             category: "Web App",
-            image: "/project6.jpg",
-            liveUrl: "https://forkify-recipe-app.netlify.com/",
-            githubUrl: "https://github.com/johndoe/forkify-recipe-app",
-            featured: false
-          }
-        ]
+          },
+        ],
       });
     }, 500);
   });
@@ -196,17 +230,21 @@ export const getProjectsData = () => {
   // } catch (error) {
   //   throw new Error(error?.response?.data?.error || error.message);
   // }
-}
+};
 
 // Description: Send contact message
 // Endpoint: POST /api/portfolio/contact
 // Request: { name: string, email: string, message: string }
 // Response: { success: boolean, message: string }
-export const sendContactMessage = (data: { name: string; email: string; message: string }) => {
+export const sendContactMessage = (data: {
+  name: string;
+  email: string;
+  message: string;
+}) => {
   // Mocking the response
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve({ success: true, message: 'Message sent successfully' });
+      resolve({ success: true, message: "Message sent successfully" });
     }, 1000);
   });
   // Uncomment the below lines to make an actual API call
@@ -215,4 +253,26 @@ export const sendContactMessage = (data: { name: string; email: string; message:
   // } catch (error) {
   //   throw new Error(error?.response?.data?.error || error.message);
   // }
-}
+};
+
+export const certifications = [
+  {
+    id: 1,
+    title: "IBM Full Stack Software Developer Certificate",
+    description:
+      "A comprehensive, hands-on program that equips with the skills to build, deploy, and manage full-stack applications, covering essential concepts in DevOps, containerization with Docker, version control with Git/GitHub, and cloud deployment using IBM Cloud and CI/CD pipelines.",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/960px-IBM_logo.svg.png?20250604110737",
+    technologies: [
+      "Full-Stack Development",
+      "Cloud Computing",
+      "Software Architecture",
+      "Prompt Engineering",
+      "Git (Version Control System)",
+    ],
+    liveUrl: "https://example-ai-dashboard.com",
+    githubUrl: "https://github.com/username/ai-dashboard",
+    featured: true,
+    year: "2025",
+  },
+];

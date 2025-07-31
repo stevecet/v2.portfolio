@@ -1,55 +1,61 @@
-import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Download, User, Code2 } from "lucide-react"
-import { getAboutData } from "@/api/portfolio"
-import { useLanguage } from "@/contexts/useLanguage"
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Download, User, Code2 } from "lucide-react";
+import { getAboutData } from "@/api/portfolio";
+import { useLanguage } from "@/contexts/useLanguage";
 
 interface AboutData {
-  description: string[]
-  skills: string[]
-  profileImage: string
+  description: string[];
+  skills: string[];
+  profileImage: string;
 }
 
 export function AboutSection() {
-  const [aboutData, setAboutData] = useState<AboutData | null>(null)
-  const [loading, setLoading] = useState(true)
-  const { t } = useLanguage()
+  const [aboutData, setAboutData] = useState<AboutData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const { t } = useLanguage();
 
   useEffect(() => {
-    console.log("AboutSection mounted, fetching about data")
+    console.log("AboutSection mounted, fetching about data");
     const fetchAboutData = async () => {
       try {
-        const data = await getAboutData()
-        setAboutData(data as AboutData)
-        console.log("About data fetched successfully")
+        const data = await getAboutData();
+        setAboutData(data as AboutData);
+        console.log("About data fetched successfully");
       } catch (error) {
-        console.error("Error fetching about data:", error)
+        console.error("Error fetching about data:", error);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
-    }
+    };
 
-    fetchAboutData()
-  }, [])
+    fetchAboutData();
+  }, []);
 
   if (loading) {
     return (
-      <section id="about" className="min-h-screen flex items-center justify-center">
+      <section
+        id="about"
+        className="min-h-screen flex items-center justify-center"
+      >
         <div className="terminal-window p-8">
           <div className="pt-8 text-primary font-mono">
-            <span className="text-accent">{t('about.loading')}</span>
+            <span className="text-accent">{t("about.loading")}</span>
             <div className="animate-pulse mt-4">████████████████████</div>
           </div>
         </div>
       </section>
-    )
+    );
   }
 
   return (
-    <section id="about" className="min-h-screen flex items-center py-20 scanlines">
+    <section
+      id="about"
+      className="min-h-screen flex items-center py-20 scanlines"
+    >
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -60,10 +66,10 @@ export function AboutSection() {
         >
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-primary font-mono mb-4">
-              <span className="text-accent"></span> {t('about.title')}
+              <span className="text-accent"></span> {t("about.title")}
             </h2>
             <div className="text-muted-foreground font-mono">
-              <span className="text-accent">{t('about.command')}</span>
+              <span className="text-accent">{t("about.command")}</span>
             </div>
           </div>
 
@@ -80,7 +86,11 @@ export function AboutSection() {
                 >
                   <div className="pt-8">
                     <p className="text-primary font-mono text-sm leading-relaxed">
-                      <span className="text-accent">{t('about.output')}{index + 1}:</span><br/>
+                      <span className="text-accent">
+                        {t("about.output")}
+                        {index + 1}:
+                      </span>
+                      <br />
                       <span className="text-muted-foreground">{paragraph}</span>
                     </p>
                   </div>
@@ -93,9 +103,17 @@ export function AboutSection() {
                 transition={{ delay: 0.6 }}
                 viewport={{ once: true }}
               >
-                <Button className="retro-button mt-6 px-6 py-3 rounded-sm">
+                <Button
+                  className="retro-button mt-6 px-6 py-3 rounded-sm"
+                  onClick={() => {
+                    const link = document.createElement("a");
+                    link.href = `${t("hero.resume_path")}`;
+                    link.download = `${t("hero.resume_file")}`;
+                    link.click();
+                  }}
+                >
                   <Download className="mr-2 h-4 w-4" />
-                  {t('about.download')}
+                  {t("about.download")}
                 </Button>
               </motion.div>
             </div>
@@ -112,7 +130,9 @@ export function AboutSection() {
                   <div className="aspect-square rounded-sm overflow-hidden mb-6 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center border-2 border-primary">
                     <div className="text-center">
                       <User className="h-24 w-24 text-primary mb-4 mx-auto" />
-                      <span className="text-2xl font-bold text-primary font-mono">{t('about.profile')}</span>
+                      <span className="text-2xl font-bold text-primary font-mono">
+                        {t("about.profile")}
+                      </span>
                     </div>
                   </div>
 
@@ -120,7 +140,7 @@ export function AboutSection() {
                     <div className="pt-8">
                       <h3 className="text-primary font-mono font-semibold mb-2">
                         <Code2 className="inline h-4 w-4 mr-2" />
-                        {t('about.skills')}
+                        {t("about.skills")}
                       </h3>
                     </div>
                   </div>
@@ -147,5 +167,5 @@ export function AboutSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

@@ -5,6 +5,8 @@ import { ProjectsSection } from "@/components/portfolio/ProjectsSection"
 import { ContactSection } from "@/components/portfolio/ContactSection"
 import { Navigation } from "@/components/portfolio/Navigation"
 import { useEffect, useState } from "react"
+import { Footer } from "@/components/Footer"
+import { CertificationSection } from "@/components/portfolio/Certification"
 
 export function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero")
@@ -38,9 +40,11 @@ export function Portfolio() {
       <div className="space-y-0">
         <HeroSection />
         <AboutSection />
-        <ExperienceSection />
+        {/* <ExperienceSection /> */}
         <ProjectsSection />
+        <CertificationSection />
         <ContactSection />
+        <Footer />
       </div>
     </div>
   )

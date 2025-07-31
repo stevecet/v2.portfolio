@@ -1,92 +1,14 @@
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Filter, Terminal, Folder } from "lucide-react";
-import { getProjectsData } from "@/api/portfolio";
+import { ExternalLink, Github, Terminal, Folder } from "lucide-react";
+import { certifications } from "@/api/portfolio";
 import { useLanguage } from "@/contexts/useLanguage";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
-interface Project {
-  _id: string;
-  title: string;
-  description: string;
-  technologies: string[];
-  category: string;
-  image: string;
-  liveUrl?: string;
-  githubUrl?: string;
-  featured: boolean;
-}
 
-export function ProjectsSection() {
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [categories, setCategories] = useState<string[]>([]);
+export function CertificationSection() {
   const { t } = useLanguage();
-
-  useEffect(() => {
-    console.log("ProjectsSection mounted, fetching projects data");
-    const fetchProjectsData = async () => {
-      try {
-        const data = await getProjectsData();
-        const projectsData = data as { projects: Project[] };
-        setProjects(projectsData.projects);
-        setFilteredProjects(projectsData.projects);
-
-        // Extract unique categories
-        const uniqueCategories = [
-          t("projects.all"),
-          ...new Set(projectsData.projects.map((p) => p.category)),
-        ];
-        setCategories(uniqueCategories);
-
-        console.log("Projects data fetched successfully");
-      } catch (error) {
-        console.error("Error fetching projects data:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProjectsData();
-  }, [t]);
-
-  const filterProjects = (category: string) => {
-    console.log(`Filtering projects by category: ${category}`);
-    setSelectedCategory(category);
-    if (category === t("projects.all")) {
-      setFilteredProjects(projects);
-    } else {
-      setFilteredProjects(
-        projects.filter((project) => project.category === category)
-      );
-    }
-  };
-
-  if (loading) {
-    return (
-      <section
-        id="projects"
-        className="min-h-screen flex items-center justify-center"
-      >
-        <div className="terminal-window p-8">
-          <div className="pt-8 text-primary font-mono">
-            <span className="text-accent">{t("projects.loading")}</span>
-            <div className="animate-pulse mt-4">████████████████████</div>
-          </div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section
@@ -99,43 +21,22 @@ export function ProjectsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="max-w-6xl mx-auto"
+          className="max-w-3xl mx-auto"
         >
           <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-primary font-mono mb-4">
-              <span className="text-accent"></span> {t("projects.title")}
+              <span className="text-accent"></span> {t("certification.title")}
             </h2>
             <div className="text-muted-foreground font-mono">
-              <span className="text-accent">{t("projects.command")}</span>
+              <span className="text-accent">{t("certification.command")}</span>
             </div>
           </div>
 
-          {/* <div className="flex justify-center mb-12">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" className="gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-mono rounded-sm">
-                  <Filter className="h-4 w-4" />
-                  {t('projects.filter').replace('{category}', selectedCategory.toLowerCase())}
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-black border-primary">
-                {categories.map((category) => (
-                  <DropdownMenuItem
-                    key={category}
-                    onClick={() => filterProjects(category)}
-                    className="text-primary hover:bg-primary hover:text-primary-foreground font-mono"
-                  >
-                    {category.toUpperCase()}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div> */}
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {filteredProjects.map((project, index) => (
+          <div className="grid">
+            {certifications.map((project, index) => (
               <motion.div
-                key={project._id}
+                key={project.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}

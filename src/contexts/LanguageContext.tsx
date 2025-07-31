@@ -24,18 +24,20 @@ const translations = {
 
     // Hero Section
     'hero.whoami': '$ whoami',
-    'hero.name': '> JOHN.DOE_',
+    'hero.name': '> STEVECETO_',
     'hero.tagline': 'I build exceptional digital experiences',
     'hero.description': 'Software engineer specializing in building exceptional\ndigital experiences. Currently focused on accessible,\nhuman-centered products with cutting-edge technology.',
     'hero.explore': './explore_profile.sh',
     'hero.resume': 'download resume.pdf',
+    'hero.resume_path': '/CV_Gilchrist_Steve_Aurel_Veceto.pdf',
+    'hero.resume_file': 'CV_Gilchrist_Steve_Aurel_Veceto.pdf',
 
     // About Section
     'about.title': '> ABOUT.EXE',
     'about.command': '~/portfolio$ cat about_me.txt',
     'about.loading': '~/loading$ Initializing profile data...',
     'about.output': 'output_',
-    'about.download': './download_resume.sh',
+    'about.download': './download_resume.pdf',
     'about.profile': 'USER.PROFILE',
     'about.skills': 'SKILLS_ARRAY[]',
 
@@ -58,15 +60,20 @@ const translations = {
     'projects.code': 'CODE',
     'projects.demo': 'DEMO',
 
+    // Certification Section
+    'certification.title': '> CERTIFICATIONS.DIR',
+    'certification.command': '~/portfolio$ ls -la certifications/',
+
     // Contact Section
     'contact.title': '> CONTACT.SH',
     'contact.command': '~/communication$ ./establish_connection.sh',
     'contact.status': 'status: AVAILABLE_FOR_OPPORTUNITIES',
-    'contact.description': 'Currently seeking new challenges and collaborations.\nFeel free to reach out for projects, questions, or just to say hello!',
+    'contact.description': 'Currently opened to challenges and collaborations.\nFeel free to reach out for projects, questions, or just to say hello!',
     'contact.info': 'CONNECTION_INFO',
     'contact.form': 'SEND_MESSAGE.FORM',
     'contact.email': 'EMAIL_ADDRESS:',
     'contact.location': 'LOCATION:',
+    'contact.localisation': 'Douala_Cameroon',
     'contact.phone': 'PHONE_NUMBER:',
     'contact.social': 'SOCIAL_LINKS[]:',
     'contact.name': 'USER_NAME:',
@@ -78,7 +85,9 @@ const translations = {
     'contact.error': 'Error',
     'contact.errorDesc': 'Failed to send message. Please try again.',
     'contact.copied': 'Email copied!',
+    'phone.copied': 'Phone copied!',
     'contact.copiedDesc': 'Email address copied to clipboard.',
+    'phone.copiedDesc': 'Phone number copied to clipboard.',
 
     // Form placeholders
     'form.name': 'Enter your name...',
@@ -106,18 +115,20 @@ const translations = {
 
     // Hero Section
     'hero.whoami': '$ whoami',
-    'hero.name': '> JOHN.DOE_',
+    'hero.name': '> STEVECETO_',
     'hero.tagline': 'Je crée des expériences numériques exceptionnelles',
     'hero.description': 'Ingénieur logiciel spécialisé dans la création d\'expériences\nnumériques exceptionnelles. Actuellement concentré sur des\nproduits accessibles et centrés sur l\'humain avec une technologie de pointe.',
     'hero.explore': './explorer_profil.sh',
     'hero.resume': 'télécharger cv.pdf',
+    'hero.resume_path': '/Resume_Gilchrist_Steve_Aurel_Veceto.pdf',
+    'hero.resume_file': 'Resume_Gilchrist_Steve_Aurel_Veceto.pdf',
 
     // About Section
     'about.title': '> APROPOS.EXE',
     'about.command': '~/portfolio$ cat a_propos_moi.txt',
     'about.loading': '~/chargement$ Initialisation des données de profil...',
     'about.output': 'sortie_',
-    'about.download': './telecharger_cv.sh',
+    'about.download': './telecharger_cv.pdf',
     'about.profile': 'PROFIL.UTILISATEUR',
     'about.skills': 'COMPETENCES_ARRAY[]',
 
@@ -140,15 +151,20 @@ const translations = {
     'projects.code': 'CODE',
     'projects.demo': 'DÉMO',
 
+    // Certification Section
+    'certification.title': '> CERTIFICATIONS.DIR',
+    'certification.command': '~/portfolio$ ls -la certifications/',
+
     // Contact Section
     'contact.title': '> CONTACT.SH',
     'contact.command': '~/communication$ ./etablir_connexion.sh',
     'contact.status': 'statut: DISPONIBLE_POUR_OPPORTUNITÉS',
-    'contact.description': 'Actuellement à la recherche de nouveaux défis et collaborations.\nN\'hésitez pas à me contacter pour des projets, des questions, ou juste pour dire bonjour!',
+    'contact.description': 'Actuellement ouverts aux nouveaux défis et collaborations.\nN\'hésitez pas à me contacter pour des projets, des questions, ou juste pour dire bonjour!',
     'contact.info': 'INFO_CONNEXION',
     'contact.form': 'ENVOYER_MESSAGE.FORM',
     'contact.email': 'ADRESSE_EMAIL:',
     'contact.location': 'LOCALISATION:',
+    'contact.localisation': 'Douala_Cameroun',
     'contact.phone': 'NUMÉRO_TÉLÉPHONE:',
     'contact.social': 'LIENS_SOCIAUX[]:',
     'contact.name': 'NOM_UTILISATEUR:',
@@ -160,7 +176,9 @@ const translations = {
     'contact.error': 'Erreur',
     'contact.errorDesc': 'Échec de l\'envoi du message. Veuillez réessayer.',
     'contact.copied': 'Email copié!',
+    'phone.copied': 'Telephone copié!',
     'contact.copiedDesc': 'Adresse email copiée dans le presse-papiers.',
+    'phone.copiedDesc': 'Numero de téléphone copié dans le presse-papiers.',
 
     // Form placeholders
     'form.name': 'Entrez votre nom...',
