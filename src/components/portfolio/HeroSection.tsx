@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowDown, Download, Github, Linkedin, Mail, Terminal, Code, Cpu } from "lucide-react"
+import { Download, Github, Linkedin, Mail, Terminal, Code } from "lucide-react"
 import { motion } from "framer-motion"
-import { useLanguage } from "@/contexts/LanguageContext"
+import { useLanguage } from "@/contexts/useLanguage"
 
 export function HeroSection() {
   const [displayText, setDisplayText] = useState("")

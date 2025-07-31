@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, Filter, Terminal, Folder } from "lucide-react"
 import { getProjectsData } from "@/api/portfolio"
-import { useLanguage } from "@/contexts/LanguageContext"
+import { useLanguage } from "@/contexts/useLanguage"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -92,7 +92,7 @@ export function ProjectsSection() {
         >
           <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-primary font-mono mb-4">
-              <span className="text-accent">&gt;</span> {t('projects.title')}
+              <span className="text-accent"></span> {t('projects.title')}
             </h2>
             <div className="text-muted-foreground font-mono">
               <span className="text-accent">{t('projects.command')}</span>

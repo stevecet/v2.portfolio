@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 
 interface LanguageContextType {
   language: string
@@ -6,7 +6,7 @@ interface LanguageContextType {
   t: (key: string) => string
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
+export const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
 const translations = {
   en: {
@@ -192,12 +192,24 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const t = (key: string): string => {
     const keys = key.split('.')
-    let value: any = translations[language as keyof typeof translations]
-    
-    for (const k of keys) {
-      value = value?.[k]
+    let value: string | undefined = (translations[language as keyof typeof translations] as Record<string, string>)[key]
+
+    // If direct key lookup fails, try nested lookup (for future extensibility)
+    if (value === undefined && keys.length > 1) {
+      let nested: unknown = translations[language as keyof typeof translations]
+      for (const k of keys) {
+        if (typeof nested === 'object' && nested !== null && k in nested) {
+          nested = (nested as Record<string, unknown>)[k]
+        } else {
+          nested = undefined
+          break
+        }
+      }
+      if (typeof nested === 'string') {
+        value = nested
+      }
     }
-    
+
     return value || key
   }
 
@@ -208,10 +220,4 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   )
 }
 
-export function useLanguage() {
-  const context = useContext(LanguageContext)
-  if (context === undefined) {
-    throw new Error('useLanguage must be used within a LanguageProvider')
-  }
-  return context
-}
+// useLanguage hook moved to a separate file for Fast Refresh compatibility.

@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Download, User, Code2 } from "lucide-react"
 import { getAboutData } from "@/api/portfolio"
-import { useLanguage } from "@/contexts/LanguageContext"
+import { useLanguage } from "@/contexts/useLanguage"
 
 interface AboutData {
   description: string[]
@@ -60,7 +60,7 @@ export function AboutSection() {
         >
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-primary font-mono mb-4">
-              <span className="text-accent">&gt;</span> {t('about.title')}
+              <span className="text-accent"></span> {t('about.title')}
             </h2>
             <div className="text-muted-foreground font-mono">
               <span className="text-accent">{t('about.command')}</span>

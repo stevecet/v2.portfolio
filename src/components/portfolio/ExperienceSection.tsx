@@ -3,9 +3,9 @@ import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Calendar, MapPin, Building, Terminal } from "lucide-react"
+import { Calendar, MapPin, Terminal } from "lucide-react"
 import { getExperienceData } from "@/api/portfolio"
-import { useLanguage } from "@/contexts/LanguageContext"
+import { useLanguage } from "@/contexts/useLanguage"
 
 interface Experience {
   _id: string
@@ -72,7 +72,7 @@ export function ExperienceSection() {
         >
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-primary font-mono mb-4">
-              <span className="text-accent">&gt;</span> {t('experience.title')}
+              <span className="text-accent"></span> {t('experience.title')}
             </h2>
             <div className="text-muted-foreground font-mono">
               <span className="text-accent">{t('experience.command')}</span>

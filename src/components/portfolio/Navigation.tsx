@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, Home, User, Briefcase, FolderOpen, Mail, Terminal } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { useLanguage } from "@/contexts/LanguageContext"
+import { useLanguage } from "@/contexts/useLanguage"
 import { LanguageToggle } from "@/components/LanguageToggle"
 
 interface NavigationProps {

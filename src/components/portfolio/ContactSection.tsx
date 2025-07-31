@@ -9,7 +9,7 @@ import { useToast } from "@/hooks/useToast"
 import { useForm } from "react-hook-form"
 import { Mail, MapPin, Phone, Github, Linkedin, Twitter, Send, Copy, Terminal, MessageSquare } from "lucide-react"
 import { sendContactMessage } from "@/api/portfolio"
-import { useLanguage } from "@/contexts/LanguageContext"
+import { useLanguage } from "@/contexts/useLanguage"
 
 interface ContactForm {
   name: string
@@ -66,7 +66,7 @@ export function ContactSection() {
         >
           <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-primary font-mono mb-4">
-              <span className="text-accent">&gt;</span> {t('contact.title')}
+              <span className="text-accent"></span> {t('contact.title')}
             </h2>
             <div className="text-muted-foreground font-mono mb-8">
               <span className="text-accent">{t('contact.command')}</span>
