@@ -5,7 +5,6 @@ import { Terminal } from "lucide-react";
 import { certifications } from "@/api/portfolio";
 import { useLanguage } from "@/contexts/useLanguage";
 
-
 export function CertificationSection() {
   const { t } = useLanguage();
 
@@ -23,14 +22,13 @@ export function CertificationSection() {
           className="max-w-3xl mx-auto"
         >
           <div className="text-center mb-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary font-mono mb-4">
+            <h2 className="text-2xl md:text-5xl font-bold text-primary font-mono mb-4">
               <span className="text-accent"></span> {t("certification.title")}
             </h2>
-            <div className="text-muted-foreground font-mono">
+            <div className="text-muted-foreground font-mono text-sm md:text-md">
               <span className="text-accent">{t("certification.command")}</span>
             </div>
           </div>
-
 
           <div className="grid">
             {certifications.map((project, index) => (
@@ -45,10 +43,10 @@ export function CertificationSection() {
               >
                 <Card className="retro-card h-full">
                   <CardHeader className="pb-4">
-                    <div className="aspect-video rounded-sm bg-gradient-to-br from-primary/20 to-accent/20 mb-4 flex items-center justify-center border-2 border-primary/50">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/960px-IBM_logo.svg.png?20250604110737"/>
+                    <div className="hidden aspect-video rounded-sm bg-gradient-to-br from-primary/20 to-accent/20 mb-4 md:flex items-center justify-center border-2 border-primary/50">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/960px-IBM_logo.svg.png?20250604110737" />
                     </div>
-                    <CardTitle className="text-xl font-bold text-primary font-mono">
+                    <CardTitle className="text-lg md:text-xl font-bold text-primary font-mono">
                       <Terminal className="inline h-4 w-4 mr-2" />
                       {project.title.toUpperCase()}
                     </CardTitle>
@@ -56,12 +54,14 @@ export function CertificationSection() {
                   <CardContent className="space-y-4">
                     <div className="terminal-window p-3">
                       <div className="pt-6">
-                        <p className="text-muted-foreground text-sm leading-relaxed font-mono">
-                          <span className="text-accent">
+                        <p className="text-muted-foreground text-sm leading-relaxed font-mono ">
+                          <span className="text-accent ">
                             {t("projects.description")}
                           </span>
                           <br />
-                          {project.description}
+                          <span className="text-xs md:text-sm">
+                            {project.description}
+                          </span>
                         </p>
                       </div>
                     </div>
@@ -73,7 +73,7 @@ export function CertificationSection() {
                             {t("projects.tech")}
                           </span>
                         </div>
-                        <div className="grid grid-cols-2 gap-1">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
                           {project.technologies.map((tech) => (
                             <Badge
                               key={tech}

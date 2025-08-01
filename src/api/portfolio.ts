@@ -267,7 +267,7 @@ export const certifications = [
       "Python and Data analysis",
       "Contenerization",
       "Microservices and Serveless",
-      "Git (Version Control System)",
+      "Git(Version Control System)",
     ],
     liveUrl: "https://example-ai-dashboard.com",
     githubUrl: "https://github.com/username/ai-dashboard",

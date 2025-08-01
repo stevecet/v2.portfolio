@@ -71,11 +71,11 @@ export function ExperienceSection() {
           className="max-w-6xl mx-auto"
         >
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary font-mono mb-4">
-              <span className="text-accent"></span> {t('experience.title')}
+            <h2 className="text-2xl md:text-5xl font-bold text-primary font-mono mb-4">
+              <span className="text-accent "></span> {t('experience.title')}
             </h2>
             <div className="text-muted-foreground font-mono">
-              <span className="text-accent">{t('experience.command')}</span>
+              <span className="text-accent text-sm md:text-md">{t('experience.command')}</span>
             </div>
           </div>
 
@@ -103,7 +103,7 @@ export function ExperienceSection() {
                     <CardHeader>
                       <CardTitle className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                         <div>
-                          <h3 className="text-2xl font-bold text-primary font-mono">
+                          <h3 className="text-xl md:text-2xl font-bold text-primary font-mono">
                             <Terminal className="inline h-6 w-6 mr-2" />
                             {exp.position.toUpperCase()}
                           </h3>
@@ -139,7 +139,7 @@ export function ExperienceSection() {
                                 className="flex items-start gap-3 text-muted-foreground font-mono text-sm"
                               >
                                 <span className="text-primary mt-1">&gt;</span>
-                                <span>{item}</span>
+                                <span className="text-xs md:text-sm">{item}</span>
                               </motion.li>
                             ))}
                           </ul>

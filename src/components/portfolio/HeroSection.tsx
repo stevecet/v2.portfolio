@@ -36,7 +36,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden scanlines"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden scanlines px-4 sm:px-6"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-950/20 to-black" />
 
@@ -52,7 +52,7 @@ export function HeroSection() {
         />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-0 sm:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -63,9 +63,9 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="flex items-center justify-center gap-2 text-primary/80 text-lg mb-4 font-mono"
+            className="flex items-center justify-center gap-2 text-primary/80 text-sm sm:text-lg mb-2 sm:mb-4 font-mono"
           >
-            <Terminal className="h-5 w-5" />
+            <Terminal className="h-4 w-4 sm:h-5 sm:w-5" />
             <span>{t("hero.whoami")}</span>
           </motion.div>
 
@@ -73,7 +73,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-5xl md:text-7xl font-bold text-primary mb-4 font-mono tracking-wider"
+            className="text-3xl sm:text-5xl md:text-7xl font-bold text-primary mb-2 sm:mb-4 font-mono tracking-wider"
             style={{ textShadow: "0 0 20px rgba(34, 85, 170, 0.5)" }}
           >
             Steve VECETO
@@ -83,7 +83,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="text-3xl md:text-5xl font-bold text-accent mb-8 font-mono"
+            className="text-xl sm:text-3xl md:text-5xl font-bold text-accent mb-4 sm:mb-8 font-mono min-h-[2.5rem] sm:min-h-[4rem]"
           >
             {displayText}
             <span className="typing-cursor"></span>
@@ -93,11 +93,11 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
-            className="terminal-window p-6 mb-12 max-w-2xl mx-auto"
+            className="terminal-window p-4 sm:p-6 mb-6 sm:mb-12 w-full max-w-2xl mx-auto"
           >
-            <div className="pt-8">
-              <p className="text-left text-primary font-mono text-sm leading-relaxed">
-                <span className="text-accent">~/portfolio$</span> cat about.txt
+            <div className="pt-4 sm:pt-8">
+              <p className="text-left text-primary font-mono text-xs sm:text-sm leading-relaxed">
+                <span className="text-accent pb-4">~/portfolio$</span> cat about.txt
                 <br />
                 <span className="text-muted-foreground whitespace-pre-line">
                   {t("hero.description")}
@@ -110,12 +110,12 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-16"
           >
             <Button
               size="lg"
               onClick={scrollToAbout}
-              className="retro-button px-8 py-3 rounded-sm transition-all duration-300 hover:scale-105"
+              className="retro-button px-4 sm:px-8 py-2 sm:py-3 rounded-sm transition-all duration-300 hover:scale-105 w-full sm:w-auto"
             >
               <Code className="mr-2 h-4 w-4" />
               {t("hero.explore")}
@@ -130,7 +130,7 @@ export function HeroSection() {
                 link.download = `${t("hero.resume_file")}`;
                 link.click();
               }}
-              className="px-8 py-3 rounded-sm border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-mono font-semibold transition-all duration-300 hover:scale-105"
+              className="px-4 sm:px-8 py-2 sm:py-3 rounded-sm border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-mono font-semibold transition-all duration-300 hover:scale-105 w-full sm:w-auto"
             >
               <Download className="mr-2 h-4 w-4" />
               {t("hero.resume")}
@@ -141,15 +141,15 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
-            className="flex justify-center space-x-6"
+            className="flex justify-center space-x-4 sm:space-x-6"
           >
             <a href="https://github.com/stevecet/" target="_blank">
               <Button
                 variant="ghost"
                 size="sm"
-                className="rounded-sm p-3 hover:bg-primary/10 border border-primary/30 hover:border-primary transition-all duration-300"
+                className="rounded-sm p-2 sm:p-3 hover:bg-primary/10 border border-primary/30 hover:border-primary transition-all duration-300"
               >
-                <Github className="h-6 w-6 text-primary" />
+                <Github className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
               </Button>
             </a>
             <a
@@ -159,18 +159,18 @@ export function HeroSection() {
               <Button
                 variant="ghost"
                 size="sm"
-                className="rounded-sm p-3 hover:bg-primary/10 border border-primary/30 hover:border-primary transition-all duration-300"
+                className="rounded-sm p-2 sm:p-3 hover:bg-primary/10 border border-primary/30 hover:border-primary transition-all duration-300"
               >
-                <Linkedin className="h-6 w-6 text-primary" />
+                <Linkedin className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
               </Button>
             </a>
             <a href="mailto:steveceto@gmail.com">
               <Button
                 variant="ghost"
                 size="sm"
-                className="rounded-sm p-3 hover:bg-primary/10 border border-primary/30 hover:border-primary transition-all duration-300"
+                className="rounded-sm p-2 sm:p-3 hover:bg-primary/10 border border-primary/30 hover:border-primary transition-all duration-300"
               >
-                <Mail className="h-6 w-6 text-primary" />
+                <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
               </Button>
             </a>
           </motion.div>

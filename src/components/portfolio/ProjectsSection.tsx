@@ -102,11 +102,11 @@ export function ProjectsSection() {
           className="max-w-6xl mx-auto"
         >
           <div className="text-center mb-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary font-mono mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-primary font-mono mb-4">
               <span className="text-accent"></span> {t("projects.title")}
             </h2>
             <div className="text-muted-foreground font-mono">
-              <span className="text-accent">{t("projects.command")}</span>
+              <span className="text-accent text-sm md:text-md">{t("projects.command")}</span>
             </div>
           </div>
 
@@ -145,7 +145,7 @@ export function ProjectsSection() {
               >
                 <Card className="retro-card h-full">
                   <CardHeader className="pb-4">
-                    <div className="aspect-video rounded-sm bg-gradient-to-br from-primary/20 to-accent/20 mb-4 flex items-center justify-center border-2 border-primary/50">
+                    <div className="hidden aspect-video rounded-sm bg-gradient-to-br from-primary/20 to-accent/20 mb-4 md:flex items-center justify-center border-2 border-primary/50">
                       <div className="text-center">
                         <Folder className="h-12 w-12 text-primary mb-2" />
                         <span className="text-2xl font-bold text-primary font-mono">
@@ -162,11 +162,12 @@ export function ProjectsSection() {
                     <div className="terminal-window p-3">
                       <div className="pt-6">
                         <p className="text-muted-foreground text-sm leading-relaxed font-mono">
-                          <span className="text-accent">
+                          <span className="text-accent ">
                             {t("projects.description")}
                           </span>
                           <br />
-                          {project.description}
+                          <span className="text-xs md:text-md">{project.description}</span>
+                          
                         </p>
                       </div>
                     </div>

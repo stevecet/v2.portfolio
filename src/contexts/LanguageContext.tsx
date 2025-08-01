@@ -31,7 +31,7 @@ const translations = {
     "hero.name": "> STEVECETO_",
     "hero.tagline": "I build exceptional digital experiences",
     "hero.description":
-      "Software engineer specializing in building exceptional\ndigital experiences. Currently focused on accessible,\nhuman-centered products with cutting-edge technology.",
+      "Full Stack Developer with 3+ years of experience building scalable, performant applications. Proven track record of delivering production-ready platforms for startups and freelance clients.",
     "hero.explore": "./explore_profile.sh",
     "hero.resume": "download resume.pdf",
     "hero.resume_path": "/CV_Gilchrist_Steve_Aurel_Veceto.pdf",
@@ -74,7 +74,7 @@ const translations = {
     "contact.command": "~/communication$ ./establish_connection.sh",
     "contact.status": "status: AVAILABLE_FOR_OPPORTUNITIES",
     "contact.description":
-      "Full Stack Developer with 4+ years building scalable, performant apps using React, Laravel, and Node.js. Proven track record of delivering production-ready platforms for startups and freelance clients. Strong communicator and quick problem-solver looking to contribute to high-impact teams",
+      "Currently open to new challenges and collaborations. Feel free to reach out for projects, questions, or just to say hello!",
     "contact.info": "CONNECTION_INFO",
     "contact.form": "SEND_MESSAGE.FORM",
     "contact.email": "EMAIL_ADDRESS:",
@@ -127,7 +127,7 @@ const translations = {
     "hero.name": "> STEVECETO_",
     "hero.tagline": "Je crée des expériences numériques exceptionnelles",
     "hero.description":
-      "Développeur Full Stack avec plus de 4 ans d’expérience dans le développement d’applications performantes et évolutives avec React, Laravel et Node.js. Solide expérience dans la livraison de plateformes prêtes pour la production pour des startups et des clients en freelance. Communicateur efficace et résolveur de problèmes rapide, je souhaite apporter ma contribution à des équipes à fort impaccentrés sur l'humain avec une technologie de pointe.",
+      "Développeur Full Stack avec 3+ années d’expériences dans le développement d’applications performantes et évolutives avec. Solide expérience dans la livraison de plateformes prêtes pour la production pour des startups et des clients en freelance.",
     "hero.explore": "./explorer_profil.sh",
     "hero.resume": "télécharger cv.pdf",
     "hero.resume_path": "/Resume_Gilchrist_Steve_Aurel_Veceto.pdf",

@@ -65,11 +65,11 @@ export function AboutSection() {
           className="max-w-6xl mx-auto"
         >
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary font-mono mb-4">
+            <h2 className="md:text-5xl font-bold text-primary font-mono mb-4 text-3xl sm:text-5xl">
               <span className="text-accent"></span> {t("about.title")}
             </h2>
             <div className="text-muted-foreground font-mono">
-              <span className="text-accent">{t("about.command")}</span>
+              <span className="text-accent text-sm md:text-md">{t("about.command")}</span>
             </div>
           </div>
 
@@ -85,13 +85,13 @@ export function AboutSection() {
                   className="terminal-window p-6"
                 >
                   <div className="pt-8">
-                    <p className="text-primary font-mono text-sm leading-relaxed">
+                    <p className="text-primary font-mono text-xs sm:text-sm leading-relaxed">
                       <span className="text-accent">
                         {t("about.output")}
                         {index + 1}:
                       </span>
                       <br />
-                      <span className="text-muted-foreground">{paragraph}</span>
+                      <span className="text-muted-foreground ">{paragraph}</span>
                     </p>
                   </div>
                 </motion.div>

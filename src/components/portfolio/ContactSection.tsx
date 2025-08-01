@@ -14,13 +14,10 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/contexts/useLanguage";
 
-
-
 export function ContactSection() {
   const { toast } = useToast();
 
   const { t } = useLanguage();
-
 
   const copyEmail = () => {
     navigator.clipboard.writeText("steveceto@gmail.com");
@@ -51,7 +48,7 @@ export function ContactSection() {
           className="max-w-6xl mx-auto"
         >
           <div className="text-center mb-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary font-mono mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-primary font-mono mb-4">
               <span className="text-accent"></span> {t("contact.title")}
             </h2>
             <div className="text-muted-foreground font-mono mb-8">
@@ -64,7 +61,7 @@ export function ContactSection() {
               <p className="text-primary font-mono text-sm leading-relaxed text-center">
                 <span className="text-accent">{t("contact.status")}</span>
                 <br />
-                <span className="text-muted-foreground whitespace-pre-line">
+                <span className="text-muted-foreground whitespace-pre-line pt-4">
                   {t("contact.description")}
                 </span>
               </p>
@@ -93,11 +90,11 @@ export function ContactSection() {
                           <Mail className="h-5 w-5 text-primary" />
                         </div>
                         <div className="flex-1">
-                          <p className="font-mono text-primary text-sm">
+                          <p className="font-mono text-primary text-xs md:text-md">
                             {t("contact.email")}
                           </p>
                           <div className="flex items-center gap-2">
-                            <p className="text-muted-foreground font-mono text-sm">
+                            <p className="text-muted-foreground font-mono text-xs md:text-md">
                               steveceto@gmail.com
                             </p>
                             <Button
@@ -117,11 +114,11 @@ export function ContactSection() {
                           <Phone className="h-5 w-5 text-primary" />
                         </div>
                         <div>
-                          <p className="font-mono text-primary text-sm">
+                          <p className="font-mono text-primary text-xs md:text-md">
                             {t("contact.phone")}
                           </p>
                           <div className="flex items-center gap-2">
-                            <p className="text-muted-foreground font-mono text-sm">
+                            <p className="text-muted-foreground font-mono text-xs md:text-md">
                               237659461748
                             </p>
                             <Button
@@ -141,10 +138,10 @@ export function ContactSection() {
                           <MapPin className="h-5 w-5 text-primary" />
                         </div>
                         <div>
-                          <p className="font-mono text-primary text-sm">
+                          <p className="font-mono text-primary text-xs md:text-md">
                             {t("contact.location")}
                           </p>
-                          <p className="text-muted-foreground font-mono text-sm">
+                          <p className="text-muted-foreground font-mono text-xs md:text-md">
                             {t("contact.localisation")}
                           </p>
                         </div>
@@ -157,46 +154,46 @@ export function ContactSection() {
                       <p className="font-mono text-primary text-sm mb-4">
                         {t("contact.social")}
                       </p>
-                      <div className="grid grid-cols-3 gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
                         <Button
                           variant="outline"
                           size="sm"
-                          className="gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-mono rounded-sm"
+                          className="gap-1 sm:gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-mono rounded-sm text-xs sm:text-sm"
                         >
                           <a
                             href="https://github.com/stevecet/"
                             target="_blank"
-                            className="flex gap-2"
+                            className="flex gap-1 sm:gap-2 items-center"
                           >
-                            <Github className="h-4 w-4" />
+                            <Github className="h-3 w-3 sm:h-4 sm:w-4" />
                             GIT
                           </a>
                         </Button>
                         <Button
                           variant="outline"
                           size="sm"
-                          className="gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-mono rounded-sm"
+                          className="gap-1 sm:gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-mono rounded-sm text-xs sm:text-sm"
                         >
                           <a
                             href="https://www.linkedin.com/in/gilchrist-steve-aurel-veceto-6a4216202/"
                             target="_blank"
-                            className="flex gap-2"
+                            className="flex gap-1 sm:gap-2 items-center"
                           >
-                            <Linkedin className="h-4 w-4" />
-                            LINKENDIN
+                            <Linkedin className="h-3 w-3 sm:h-4 sm:w-4" />
+                            LINKEDIN
                           </a>
                         </Button>
                         <Button
                           variant="outline"
                           size="sm"
-                          className="gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-mono rounded-sm"
+                          className="gap-1 sm:gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-mono rounded-sm text-xs sm:text-sm"
                         >
                           <a
                             href="https://wa.me/237659461748"
                             target="_blank"
-                            className="flex gap-2"
+                            className="flex gap-1 sm:gap-2 items-center"
                           >
-                            <MessageCircle className="h-4 w-4" />
+                            <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4" />
                             WHATSAPP
                           </a>
                         </Button>
