@@ -1,66 +1,26 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/useToast";
-import { useForm } from "react-hook-form";
 import {
   Mail,
   MapPin,
   Phone,
   Github,
   Linkedin,
-  Send,
   Copy,
   Terminal,
-  MessageSquare,
   MessageCircle,
 } from "lucide-react";
-import { sendContactMessage } from "@/api/portfolio";
 import { useLanguage } from "@/contexts/useLanguage";
 
-interface ContactForm {
-  name: string;
-  email: string;
-  message: string;
-}
+
 
 export function ContactSection() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<ContactForm>();
+
   const { t } = useLanguage();
 
-  const onSubmit = async (data: ContactForm) => {
-    console.log("Submitting contact form:", data);
-    setIsSubmitting(true);
-
-    try {
-      await sendContactMessage(data);
-      toast({
-        title: t("contact.success"),
-        description: t("contact.successDesc"),
-      });
-      reset();
-    } catch (error) {
-      console.error("Error sending message:", error);
-      toast({
-        title: t("contact.error"),
-        description: t("contact.errorDesc"),
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   const copyEmail = () => {
     navigator.clipboard.writeText("steveceto@gmail.com");
@@ -111,7 +71,7 @@ export function ContactSection() {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-1 gap-12">
+          <div className="max-w-3xl  mb-16 mx-auto">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -246,115 +206,6 @@ export function ContactSection() {
                 </CardContent>
               </Card>
             </motion.div>
-
-            {/* <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <Card className="retro-card">
-                <CardHeader>
-                  <CardTitle className="text-2xl font-bold text-primary font-mono">
-                    <MessageSquare className="inline h-6 w-6 mr-2" />
-                    {t("contact.form")}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                    <div className="space-y-2">
-                      <Label
-                        htmlFor="name"
-                        className="text-primary font-mono text-sm"
-                      >
-                        {t("contact.name")}
-                      </Label>
-                      <Input
-                        id="name"
-                        {...register("name", {
-                          required: `Name ${t("form.required")}`,
-                        })}
-                        placeholder={t("form.name")}
-                        className="retro-input rounded-sm font-mono"
-                      />
-                      {errors.name && (
-                        <p className="text-sm text-destructive font-mono">
-                          {t("common.error")} {errors.name.message}
-                        </p>
-                      )}
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label
-                        htmlFor="email"
-                        className="text-primary font-mono text-sm"
-                      >
-                        {t("contact.email")}
-                      </Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        {...register("email", {
-                          required: `Email ${t("form.required")}`,
-                          pattern: {
-                            value: /^\S+@\S+$/i,
-                            message: t("form.invalidEmail"),
-                          },
-                        })}
-                        placeholder={t("form.email")}
-                        className="retro-input rounded-sm font-mono"
-                      />
-                      {errors.email && (
-                        <p className="text-sm text-destructive font-mono">
-                          {t("common.error")} {errors.email.message}
-                        </p>
-                      )}
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label
-                        htmlFor="message"
-                        className="text-primary font-mono text-sm"
-                      >
-                        {t("contact.message")}
-                      </Label>
-                      <Textarea
-                        id="message"
-                        {...register("message", {
-                          required: `Message ${t("form.required")}`,
-                        })}
-                        placeholder={t("form.message")}
-                        rows={5}
-                        className="retro-input rounded-sm font-mono resize-none"
-                      />
-                      {errors.message && (
-                        <p className="text-sm text-destructive font-mono">
-                          {t("common.error")} {errors.message.message}
-                        </p>
-                      )}
-                    </div>
-
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="retro-button w-full rounded-sm"
-                    >
-                      {isSubmitting ? (
-                        <div className="flex items-center gap-2 font-mono">
-                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-foreground"></div>
-                          {t("contact.sending")}
-                        </div>
-                      ) : (
-                        <div className="flex items-center gap-2 font-mono">
-                          <Send className="h-4 w-4" />
-                          {t("contact.send")}
-                        </div>
-                      )}
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
-            </motion.div> */}
           </div>
         </motion.div>
       </div>

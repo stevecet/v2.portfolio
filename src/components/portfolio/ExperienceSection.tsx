@@ -80,7 +80,7 @@ export function ExperienceSection() {
           </div>
 
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mb-8 bg-black border border-primary rounded-sm">
+            <TabsList className="grid w-full grid-cols-1 md:grid-cols-4 mb-8 bg-black border border-primary rounded-sm">
               {experiences.map((exp) => (
                 <TabsTrigger
                   key={exp._id}

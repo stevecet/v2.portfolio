@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Home, User, Briefcase, FolderOpen, Mail, Terminal } from "lucide-react"
+import { Menu, Home, User, Briefcase, BadgeCheck, FolderOpen, Mail, Terminal } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useLanguage } from "@/contexts/useLanguage"
 import { LanguageToggle } from "@/components/LanguageToggle"
@@ -19,6 +19,7 @@ export function Navigation({ activeSection }: NavigationProps) {
     { id: "about", label: t('nav.about'), icon: User, command: t('nav.command.about') },
     { id: "experience", label: t('nav.experience'), icon: Briefcase, command: t('nav.command.work') },
     { id: "projects", label: t('nav.projects'), icon: FolderOpen, command: t('nav.command.projects') },
+    { id: "certifications", label: t('nav.certifications'), icon: BadgeCheck, command: t('nav.command.certifications') },
     { id: "contact", label: t('nav.contact'), icon: Mail, command: t('nav.command.contact') },
   ]
 

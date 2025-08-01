@@ -40,7 +40,7 @@ export function Portfolio() {
       <div className="space-y-0">
         <HeroSection />
         <AboutSection />
-        {/* <ExperienceSection /> */}
+        <ExperienceSection />
         <ProjectsSection />
         <CertificationSection />
         <ContactSection />

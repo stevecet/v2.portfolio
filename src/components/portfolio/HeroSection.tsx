@@ -76,7 +76,7 @@ export function HeroSection() {
             className="text-5xl md:text-7xl font-bold text-primary mb-4 font-mono tracking-wider"
             style={{ textShadow: "0 0 20px rgba(34, 85, 170, 0.5)" }}
           >
-          Steve VECETO
+            Steve VECETO
           </motion.h1>
 
           <motion.h2
@@ -126,8 +126,8 @@ export function HeroSection() {
               size="lg"
               onClick={() => {
                 const link = document.createElement("a");
-                link.href = `${t("hero.resume_path")}`
-                link.download = `${t("hero.resume_file")}`
+                link.href = `${t("hero.resume_path")}`;
+                link.download = `${t("hero.resume_file")}`;
                 link.click();
               }}
               className="px-8 py-3 rounded-sm border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-mono font-semibold transition-all duration-300 hover:scale-105"
@@ -143,36 +143,36 @@ export function HeroSection() {
             transition={{ delay: 1.2 }}
             className="flex justify-center space-x-6"
           >
-            <Button
-              variant="ghost"
-              size="sm"
-              className="rounded-sm p-3 hover:bg-primary/10 border border-primary/30 hover:border-primary transition-all duration-300"
-            >
-              <a href="https://github.com/stevecet/" target="_blank">
+            <a href="https://github.com/stevecet/" target="_blank">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="rounded-sm p-3 hover:bg-primary/10 border border-primary/30 hover:border-primary transition-all duration-300"
+              >
                 <Github className="h-6 w-6 text-primary" />
-              </a>
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="rounded-sm p-3 hover:bg-primary/10 border border-primary/30 hover:border-primary transition-all duration-300"
+              </Button>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/gilchrist-steve-aurel-veceto-6a4216202/"
+              target="_blank"
             >
-              <a
-                href="https://www.linkedin.com/in/gilchrist-steve-aurel-veceto-6a4216202/"
-                target="_blank"
+              <Button
+                variant="ghost"
+                size="sm"
+                className="rounded-sm p-3 hover:bg-primary/10 border border-primary/30 hover:border-primary transition-all duration-300"
               >
                 <Linkedin className="h-6 w-6 text-primary" />
-              </a>
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="rounded-sm p-3 hover:bg-primary/10 border border-primary/30 hover:border-primary transition-all duration-300"
-            >
-              <a href="mailto:steveceto@gmail.com">
+              </Button>
+            </a>
+            <a href="mailto:steveceto@gmail.com">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="rounded-sm p-3 hover:bg-primary/10 border border-primary/30 hover:border-primary transition-all duration-300"
+              >
                 <Mail className="h-6 w-6 text-primary" />
-              </a>
-            </Button>
+              </Button>
+            </a>
           </motion.div>
         </motion.div>
       </div>

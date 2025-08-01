@@ -1,32 +1,26 @@
-import api from "./api";
-
-// Description: Get about section data
-// Endpoint: GET /api/portfolio/about
-// Request: {}
-// Response: { description: string[], skills: string[], profileImage: string }
 export const getAboutData = () => {
   // Mocking the response
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({
         description: [
-          "Hello! I'm Steve, a software engineer based in Douala who enjoys building things that live on the internet. I develop exceptional websites and web apps that provide intuitive, pixel-perfect user interfaces with efficient and modern backends.",
+          "Hello! I'm Steveceto, a software developer based in Douala who enjoys building things that live on the internet. I develop websites and web apps that provide intuitive, user friendly interfaces with efficient and modern backends.",
           "I work on a wide variety of interesting and meaningful projects on a daily basis.",
           "Here are a few technologies I've been working with recently:",
         ],
         skills: [
-          "JavaScript (ES6+)",
+          "JavaScript",
           "TypeScript",
-          "React",
-          "Node.js",
           "Python",
           "SQL",
-          "MongoDB",
-          "Tailwind",
+          "React",
           "Angular",
-          "Laravel",
           "Next.js",
+          "Tailwind",
+          "Laravel",
           "Express.js",
+          "Node.js",
+          "MongoDB",
         ],
         profileImage: "/profile.jpg",
       });
@@ -50,67 +44,103 @@ export const getExperienceData = () => {
     setTimeout(() => {
       resolve({
         experiences: [
+          // {
+          //   _id: "1",
+          //   company: "Online Africa",
+          //   position: "Network Operator Center Engineer",
+          //   location: "Douala, Cameroon",
+          //   startDate: "Jan 2024",
+          //   endDate: "",
+          //   current: true,
+          //   description: [
+          //     "Real-time Network Monitoring:",
+          //     "Incident Response",
+          //     "Troubleshooting",
+          //     "Performance Optimization",
+          //     "Reporting and Documentation"
+          //   ],
+          //   technologies: [
+          //     // "JavaScript",
+          //     // "React",
+          //     // "Node.js",
+          //     // "GraphQL",
+          //     // "PostgreSQL",
+          //     // "AWS",
+          //   ],
+          //   website: "https://airbnb.com",
+          // },
           {
-            _id: "1",
-            company: "Airbnb",
-            position: "Senior Software Engineer",
-            location: "San Francisco, CA",
-            startDate: "Jan 2022",
+            _id: "2",
+            company: "Esmartlearning",
+            position: "Full stack developer and product designer",
+            location: "Douala, Cameroon",
+            startDate: "Dec 2024",
             endDate: "",
             current: true,
             description: [
-              "Write modern, performant, maintainable code for a diverse array of client and internal projects",
-              "Work with a variety of different languages, platforms, frameworks, and content management systems such as JavaScript, TypeScript, Gatsby, React, Craft, WordPress, Prismic, and Netlify",
-              "Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis",
+              "Project planning, budgeting, and coordination of agile sprints",
+              "UI/UX design with Figma",
+              "Developed a REST API with Laravel for user and test management",
+              "Integrated front-end with React.js and Material UI",
+              "Deployed the platform on Vercel and handled maintenance",
             ],
             technologies: [
-              "JavaScript",
               "React",
-              "Node.js",
-              "GraphQL",
-              "PostgreSQL",
-              "AWS",
+              "Material UI",
+              "Recharts",
+              "Axios",
+              "Laravel",
+              "MySQL",
             ],
             website: "https://airbnb.com",
           },
           {
-            _id: "2",
-            company: "Upstatement",
-            position: "Software Engineer",
-            location: "Boston, MA",
-            startDate: "May 2018",
-            endDate: "Dec 2021",
+            _id: "3",
+            company: "Interstation",
+            position: "Frontend Developer",
+            location: "Douala, Cameroon",
+            startDate: "August 2024",
+            endDate: "Dec 2024",
             current: false,
             description: [
-              "Developed and maintained code for in-house and client websites primarily using HTML, CSS, Sass, JavaScript, and jQuery",
-              "Manually tested sites in various browsers and mobile devices to ensure cross-browser compatibility and responsiveness",
-              "Clients included JetBlue, Lovesac, U.S. Cellular, U.S. Department of Defense, and more",
+              "Developed UI with React.js and Material UI",
+              "Implemented full UI based on provided designs",
+              "Deployed the app on Vercel and ensured maintenance",
             ],
-            technologies: [
-              "JavaScript",
-              "jQuery",
-              "HTML",
-              "CSS",
-              "Sass",
-              "WordPress",
-            ],
-            website: "https://upstatement.com",
+            technologies: ["Figma", "React.js", "Material UI", "Axios"],
+            // website: "https://upstatement.com",
           },
           {
-            _id: "3",
-            company: "Apple",
-            position: "Software Engineer Intern",
-            location: "Cupertino, CA",
-            startDate: "Jun 2017",
-            endDate: "Aug 2017",
+            _id: "4",
+            company: "UWACO",
+            position: "Frontend Developer Intern",
+            location: "Douala, Cameroon",
+            startDate: "Jul 2023",
+            endDate: "Nov 2023",
             current: false,
             description: [
-              "Developed a full-stack web application using React and Node.js to track and visualize UX research",
-              "Worked with designers, engineers, and the research team to iterate on the UX research tools",
-              "Communicated with multi-disciplinary teams of engineers, designers, and researchers on a daily basis",
+              "Designed and integrated Angular UI for a vehicle tracking application",
+              "Optimized image and asset caching for better performance",
+              "Implemented a video replay system based on live vehicle data",
             ],
-            technologies: ["React", "Node.js", "Express", "MongoDB", "D3.js"],
-            website: "https://apple.com",
+            technologies: ["Angular", "SCSS", "Material Angular", "Nexcloud"],
+            // website: "https://apple.com",
+          },
+          {
+            _id: "5",
+            company: "Digital Investment",
+            position: "Web designer",
+            location: "Douala, Cameroon",
+            startDate: "Nov 2021",
+            endDate: "Aug 2022",
+            current: false,
+            description: [
+              "Designed and developed dynamic showcase websites with WordPress",
+              "Created marketing visuals (banners, flyers) with Adobe Photoshop",
+              "Impact: Modernized and improved UX for various client websites",
+            ],
+            technologies: ["Wordpress", "Elementor", "Photoshop", "Figma"],
+            // website: "https://apple.com",
           },
         ],
       });
@@ -149,7 +179,7 @@ export const getProjectsData = () => {
               "Tailwind",
               "Express",
               "MongoDB",
-              "Node"
+              "Node",
             ],
             liveUrl: "https://taskify-steveceto.vercel.app/",
             githubUrl: "https://github.com/stevecet/taskify",
@@ -209,12 +239,7 @@ export const getProjectsData = () => {
               "Plateforme de réservation de rendez-vous adaptée aux services comme les salons de beauté, les consultations ou les cours. Les utilisateurs peuvent consulter les disponibilités, réserver des créneaux, recevoir des rappels et gérer leurs réservations. Les administrateurs peuvent configurer les horaires et les types de services.",
             image:
               "https://unsplash.com/photos/white-printer-paper-on-brown-wooden-table-DItYlc26zVI",
-            technologies: [
-              "Next",
-              "MongoDB",
-              "Express",
-              "Node"
-            ],
+            technologies: ["Next", "MongoDB", "Express", "Node"],
             liveUrl: "https://reservo-steveceto.vercel.app",
             githubUrl: "https://github.com/stevecet/reservo",
             featured: false,
@@ -224,41 +249,12 @@ export const getProjectsData = () => {
       });
     }, 500);
   });
-  // Uncomment the below lines to make an actual API call
-  // try {
-  //   return await api.get('/api/portfolio/projects');
-  // } catch (error) {
-  //   throw new Error(error?.response?.data?.error || error.message);
-  // }
-};
-
-// Description: Send contact message
-// Endpoint: POST /api/portfolio/contact
-// Request: { name: string, email: string, message: string }
-// Response: { success: boolean, message: string }
-export const sendContactMessage = (data: {
-  name: string;
-  email: string;
-  message: string;
-}) => {
-  // Mocking the response
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({ success: true, message: "Message sent successfully" });
-    }, 1000);
-  });
-  // Uncomment the below lines to make an actual API call
-  // try {
-  //   return await api.post('/api/portfolio/contact', data);
-  // } catch (error) {
-  //   throw new Error(error?.response?.data?.error || error.message);
-  // }
 };
 
 export const certifications = [
   {
     id: 1,
-    title: "IBM Full Stack Software Developer Certificate",
+    title: "IBM Full Stack Software Developer Professional Certificate",
     description:
       "A comprehensive, hands-on program that equips with the skills to build, deploy, and manage full-stack applications, covering essential concepts in DevOps, containerization with Docker, version control with Git/GitHub, and cloud deployment using IBM Cloud and CI/CD pipelines.",
     image:
@@ -267,7 +263,10 @@ export const certifications = [
       "Full-Stack Development",
       "Cloud Computing",
       "Software Architecture",
-      "Prompt Engineering",
+      "Generative AI",
+      "Python and Data analysis",
+      "Contenerization",
+      "Microservices and Serveless",
       "Git (Version Control System)",
     ],
     liveUrl: "https://example-ai-dashboard.com",

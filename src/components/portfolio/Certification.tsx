@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Terminal, Folder } from "lucide-react";
+import { Terminal } from "lucide-react";
 import { certifications } from "@/api/portfolio";
 import { useLanguage } from "@/contexts/useLanguage";
 
@@ -12,7 +11,7 @@ export function CertificationSection() {
 
   return (
     <section
-      id="projects"
+      id="certifications"
       className="min-h-screen flex items-center py-20 scanlines"
     >
       <div className="container mx-auto px-6">
@@ -47,12 +46,7 @@ export function CertificationSection() {
                 <Card className="retro-card h-full">
                   <CardHeader className="pb-4">
                     <div className="aspect-video rounded-sm bg-gradient-to-br from-primary/20 to-accent/20 mb-4 flex items-center justify-center border-2 border-primary/50">
-                      <div className="text-center">
-                        <Folder className="h-12 w-12 text-primary mb-2" />
-                        <span className="text-2xl font-bold text-primary font-mono">
-                          {project.title.charAt(0).toUpperCase()}
-                        </span>
-                      </div>
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/960px-IBM_logo.svg.png?20250604110737"/>
                     </div>
                     <CardTitle className="text-xl font-bold text-primary font-mono">
                       <Terminal className="inline h-4 w-4 mr-2" />
@@ -90,40 +84,6 @@ export function CertificationSection() {
                           ))}
                         </div>
                       </div>
-                    </div>
-
-                    <div className="flex gap-2 pt-4">
-                      {project.githubUrl && (
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-mono rounded-sm flex-1"
-                        >
-                          <a
-                            href={project.githubUrl}
-                            target="_blank"
-                            className="flex gap-2"
-                          >
-                            <Github className="h-4 w-4" />
-                            {t("projects.code")}
-                          </a>
-                        </Button>
-                      )}
-                      {project.liveUrl && (
-                        <Button
-                          size="sm"
-                          className="retro-button gap-2 rounded-sm flex-1"
-                        >
-                          <a
-                            href={project.liveUrl}
-                            target="_blank"
-                            className="flex gap-2"
-                          >
-                            <ExternalLink className="h-4 w-4" />
-                            {t("projects.demo")}
-                          </a>
-                        </Button>
-                      )}
                     </div>
                   </CardContent>
                 </Card>
