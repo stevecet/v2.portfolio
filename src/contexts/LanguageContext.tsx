@@ -18,12 +18,12 @@ const translations = {
     "nav.experience": "Experience",
     "nav.projects": "Projects",
     "nav.contact": "Contact",
-    'nav.certifications': 'Certifications',
+    "nav.certifications": "Certifications",
     "nav.command.home": "./home.sh",
     "nav.command.about": "./about.sh",
     "nav.command.work": "./work.sh",
     "nav.command.projects": "./projects.sh",
-    'nav.command.certifications': './certifications.sh',
+    "nav.command.certifications": "./certifications.sh",
     "nav.command.contact": "./contact.sh",
 
     // Hero Section
@@ -74,7 +74,7 @@ const translations = {
     "contact.command": "~/communication$ ./establish_connection.sh",
     "contact.status": "status: AVAILABLE_FOR_OPPORTUNITIES",
     "contact.description":
-      "Currently opened to challenges and collaborations.\nFeel free to reach out for projects, questions, or just to say hello!",
+      "Full Stack Developer with 4+ years building scalable, performant apps using React, Laravel, and Node.js. Proven track record of delivering production-ready platforms for startups and freelance clients. Strong communicator and quick problem-solver looking to contribute to high-impact teams",
     "contact.info": "CONNECTION_INFO",
     "contact.form": "SEND_MESSAGE.FORM",
     "contact.email": "EMAIL_ADDRESS:",
@@ -113,7 +113,7 @@ const translations = {
     "nav.about": "À propos",
     "nav.experience": "Expérience",
     "nav.projects": "Projets",
-    'nav.certifications': 'Certifications',
+    "nav.certifications": "Certifications",
     "nav.contact": "Contact",
     "nav.command.home": "./accueil.sh",
     "nav.command.about": "./apropos.sh",
@@ -127,7 +127,7 @@ const translations = {
     "hero.name": "> STEVECETO_",
     "hero.tagline": "Je crée des expériences numériques exceptionnelles",
     "hero.description":
-      "Ingénieur logiciel spécialisé dans la création d'expériences\nnumériques exceptionnelles. Actuellement concentré sur des\nproduits accessibles et centrés sur l'humain avec une technologie de pointe.",
+      "Développeur Full Stack avec plus de 4 ans d’expérience dans le développement d’applications performantes et évolutives avec React, Laravel et Node.js. Solide expérience dans la livraison de plateformes prêtes pour la production pour des startups et des clients en freelance. Communicateur efficace et résolveur de problèmes rapide, je souhaite apporter ma contribution à des équipes à fort impaccentrés sur l'humain avec une technologie de pointe.",
     "hero.explore": "./explorer_profil.sh",
     "hero.resume": "télécharger cv.pdf",
     "hero.resume_path": "/Resume_Gilchrist_Steve_Aurel_Veceto.pdf",
