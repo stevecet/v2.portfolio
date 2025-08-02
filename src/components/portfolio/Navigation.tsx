@@ -72,7 +72,7 @@ export function Navigation({ activeSection }: NavigationProps) {
               <Menu className="h-5 w-5" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-64 bg-black border-primary">
+          <SheetContent side="right" className="w-68 bg-black border-primary">
             <div className="terminal-window p-4 mt-8">
               <div className="pt-8">
                 <div className="text-primary font-mono text-sm mb-4">
