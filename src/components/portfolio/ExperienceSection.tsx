@@ -27,7 +27,6 @@ export function ExperienceSection() {
   const { t } = useLanguage()
 
   useEffect(() => {
-    console.log("ExperienceSection mounted, fetching experience data")
     const fetchExperienceData = async () => {
       try {
         const data = await getExperienceData()
@@ -36,7 +35,6 @@ export function ExperienceSection() {
         if (experienceData.experiences.length > 0) {
           setActiveTab(experienceData.experiences[0]._id)
         }
-        console.log("Experience data fetched successfully")
       } catch (error) {
         console.error("Error fetching experience data:", error)
       } finally {

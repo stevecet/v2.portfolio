@@ -3,15 +3,9 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Filter, Terminal, Folder } from "lucide-react";
+import { ExternalLink, Github, Terminal, Folder } from "lucide-react";
 import { getProjectsData } from "@/api/portfolio";
 import { useLanguage } from "@/contexts/useLanguage";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 interface Project {
   _id: string;
@@ -29,12 +23,10 @@ export function ProjectsSection() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedCategory, setSelectedCategory] = useState("All");
   const [categories, setCategories] = useState<string[]>([]);
   const { t } = useLanguage();
 
   useEffect(() => {
-    console.log("ProjectsSection mounted, fetching projects data");
     const fetchProjectsData = async () => {
       try {
         const data = await getProjectsData();
@@ -48,8 +40,6 @@ export function ProjectsSection() {
           ...new Set(projectsData.projects.map((p) => p.category)),
         ];
         setCategories(uniqueCategories);
-
-        console.log("Projects data fetched successfully");
       } catch (error) {
         console.error("Error fetching projects data:", error);
       } finally {
@@ -60,17 +50,6 @@ export function ProjectsSection() {
     fetchProjectsData();
   }, [t]);
 
-  const filterProjects = (category: string) => {
-    console.log(`Filtering projects by category: ${category}`);
-    setSelectedCategory(category);
-    if (category === t("projects.all")) {
-      setFilteredProjects(projects);
-    } else {
-      setFilteredProjects(
-        projects.filter((project) => project.category === category)
-      );
-    }
-  };
 
   if (loading) {
     return (

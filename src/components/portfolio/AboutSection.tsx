@@ -19,12 +19,10 @@ export function AboutSection() {
   const { t } = useLanguage();
 
   useEffect(() => {
-    console.log("AboutSection mounted, fetching about data");
     const fetchAboutData = async () => {
       try {
         const data = await getAboutData();
         setAboutData(data as AboutData);
-        console.log("About data fetched successfully");
       } catch (error) {
         console.error("Error fetching about data:", error);
       } finally {

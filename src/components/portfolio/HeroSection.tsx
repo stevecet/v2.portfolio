@@ -10,7 +10,6 @@ export function HeroSection() {
   const fullText = t("hero.tagline");
 
   useEffect(() => {
-    console.log("HeroSection mounted, starting typing animation");
     setDisplayText("");
     let index = 0;
     const timer = setInterval(() => {
@@ -26,7 +25,6 @@ export function HeroSection() {
   }, [fullText]);
 
   const scrollToAbout = () => {
-    console.log("Scrolling to about section");
     const aboutSection = document.getElementById("about");
     if (aboutSection) {
       aboutSection.scrollIntoView({ behavior: "smooth" });

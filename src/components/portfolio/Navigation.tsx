@@ -24,7 +24,6 @@ export function Navigation({ activeSection }: NavigationProps) {
   ]
 
   const scrollToSection = (sectionId: string) => {
-    console.log(`Scrolling to section: ${sectionId}`)
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })

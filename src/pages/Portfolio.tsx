@@ -6,16 +6,15 @@ import { ContactSection } from "@/components/portfolio/ContactSection"
 import { Navigation } from "@/components/portfolio/Navigation"
 import { useEffect, useState } from "react"
 import { Footer } from "@/components/Footer"
-import { CertificationSection } from "@/components/portfolio/Certification"
+import { CertificationSection } from "@/components/portfolio/CertificationSection"
 
 export function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero")
 
   useEffect(() => {
-    console.log("Portfolio component mounted")
     
     const handleScroll = () => {
-      const sections = ["hero", "about", "experience", "projects", "contact"]
+      const sections = ["hero", "about", "experience", "projects", "certifications", "contact"]
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
